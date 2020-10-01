@@ -1,5 +1,5 @@
 # MusicStore
-This is a Muisc website store project where I had use Java, HTML, Gradle and H2 Database 
+This is a Music Store website project where I had use Java, HTML, Gradle and H2 Database 
 
 
 To run this code 
