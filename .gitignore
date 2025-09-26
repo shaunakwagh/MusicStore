@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# IDE files
+*.iml
+/.idea/
+/.vscode/
+
+# logs
+*.log
+
+# OS
+.DS_Store
+
+# packaged jars/zips/tars
+*.jar
+*.war
+*.ear
+*.zip
+*.tar
