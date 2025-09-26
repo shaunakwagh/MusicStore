@@ -1,63 +1,40 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.6.RELEASE")
-    }
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'application'
+    id 'eclipse'
+    id 'idea'
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-apply plugin: 'application'
-
-bootJar {
-    baseName = 'gs-serving-web-content'
-    version =  '0.1.0'
+group = 'com.musicstore'
+version = '0.1.0'
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
     mavenCentral()
 }
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
-
-    //
-    //  spring
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
-    compile("org.springframework.boot:spring-boot-starter-security")
-    compile("org.springframework.boot:spring-boot-devtools")
-    //compile("javax.persistence:persistence-api")
-    //compile('org.springframework.boot:spring-boot-starter-web')
-
-
-    //
-    //  NEED FOR PS6
-    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
-    compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    //compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile("org.springframework.data:spring-data-jpa")
-
-    //
-    //  NEED FOR H2
-    // https://mvnrepository.com/artifact/com.h2database/h2
-    compile group: 'com.h2database', name: 'h2', version: '1.4.200'
-
-
-    // https://mvnrepository.com/artifact/com.google.guava/guava
-    compile group: 'com.google.guava', name: 'guava', version: '28.1-jre'
-
-    //testCompile("junit:junit")
-
-
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.data:spring-data-jpa'
+    implementation 'com.h2database:h2:2.2.224'
+    implementation 'com.google.guava:guava:32.1.2-jre'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+application {
+    mainClass = 'com.musicstore.Application'
+}
 
-mainClassName = 'com.musicstore.Application'
+bootJar {
+    archiveBaseName = 'gs-serving-web-content'
+    archiveVersion = '0.1.0'
+}

@@ -107,7 +107,7 @@ public class AlbumRepositoryImpl implements AlbumRepository {
     }
 
     @Override
-    public boolean deletAlbumById(Long albumId) {
+    public boolean deleteAlbumById(Long albumId) {
         //albumList = albumList.stream().filter(g -> !g.getAlbumId().equals(albumId)).collect(Collectors.toList());
         // return true;
         jpaMusicStoreRepository.deleteById(albumId);

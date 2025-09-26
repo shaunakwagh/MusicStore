@@ -15,5 +15,5 @@ public interface AlbumRepository {
 
     Album editAlbum(Long albumId, String albumName, String albumArtist,  String albumGenre,Double albumPrice, Integer albumTracks);
 
-    boolean deletAlbumById(Long albumId);
+    boolean deleteAlbumById(Long albumId);
 }

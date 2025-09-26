@@ -76,7 +76,7 @@ public class AlbumServiceImpl implements AlbumService {
 
     @Override
     public boolean deleteAlbumById(Long albumId) {
-        return albumRepository.deletAlbumById(albumId);
+        return albumRepository.deleteAlbumById(albumId);
     }
 }
 

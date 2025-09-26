@@ -5,22 +5,13 @@
 --    private String albumGenre;
 --    private Double albumPrice;
 --    private Integer albumTracks;
---  Create a table to hold customers!
+--  Create a table to hold albums!
 create table public.Album (
-    album_id INTEGER PRIMARY KEY,
-    album_name character  varying ,
-    album_artist character  varying ,
-    album_genre character  varying ,
-    album_price double ,
-    album_tracks integer
+    album_id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    album_name VARCHAR(255),
+    album_artist VARCHAR(255),
+    album_genre VARCHAR(255),
+    album_price DOUBLE,
+    album_tracks INTEGER
 );
-
-drop sequence public.album_id_seq;
-
-create sequence public.album_id_seq
-    increment by 100
-    minvalue 1
-    maxvalue 2147483647
-    start 1
-    cache 100;
 

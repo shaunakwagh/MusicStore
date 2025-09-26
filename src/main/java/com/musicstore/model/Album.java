@@ -1,6 +1,6 @@
 package com.musicstore.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 public class Album {
@@ -8,8 +8,7 @@ public class Album {
     //
     //  instance data
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "album_id_seq")
-    @SequenceGenerator(name = "album_id_seq", sequenceName = "album_id_seq", allocationSize = 100)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long albumId;
     private String albumName;
     private String albumArtist;
